@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Все заметки</h2>
+<ul>
+{% for note in notes %}
+  <li>
+    <strong>{{ note.text|truncatechars:100 }}</strong><br>
+    Автор: {{ note.author.username }}<br>
+    Статус: {{ note.status.name }}<br>
+    Категории:
+    {% for cat in note.categories.all %} {{ cat.title }} {% endfor %}
+    <br>
+    Дата: {{ note.created_at }}
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

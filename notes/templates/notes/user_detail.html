@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Пользователь: {{ user_obj.username }}</h2>
+<p>Email: {{ user_obj.email }}</p>
+<p>Биография: {{ user_obj.userprofile.bio }}</p>
+<p>Дата рождения: {{ user_obj.userprofile.birth_date }}</p>
+
+<h3>Заметки:</h3>
+<ul>
+{% for note in user_obj.note_set.all %}
+  <li>{{ note.text|truncatechars:100 }} - Статус: {{ note.status.name }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

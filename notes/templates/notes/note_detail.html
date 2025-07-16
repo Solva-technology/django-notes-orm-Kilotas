@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Заметка</h2>
+<p>{{ note.text }}</p>
+<p>Автор: {{ note.author.username }} ({{ note.author.email }})</p>
+<p>Биография: {{ note.author.userprofile.bio }}</p>
+<p>Дата рождения: {{ note.author.userprofile.birth_date }}</p>
+<p>Статус: {{ note.status.name }}{% if note.status.is_final %} (финальный){% endif %}</p>
+<p>Категории: 
+{% for cat in note.categories.all %} {{ cat.title }} {% endfor %}
+</p>
+{% endblock %}
