@@ -41,11 +41,14 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
+SECRET_KEY=django-insecure-7@h38u$5@x5s8b#e)4q@4$8+72z_6h7jz*e$6)7(k^3+d9x$&z
+DJANGO_SECRET_KEY=django-insecure-7@h38u$5@x5s8b#e)4q@4$8+72z_6h7jz*e$6)7(k^3+d9x$&z
 
-DJANGO_SECRET_KEY=your-secret-key
-DJANGO_DEBUG=True
-DJANGO_LANGUAGE_CODE=en-us
+DJANGO_LANGUAGE_CODE=ru-ru
 DJANGO_TIME_ZONE=UTC
+
+DJANGO_DEBUG=True
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
 
 
 3️⃣ Собери и запусти контейнеры
